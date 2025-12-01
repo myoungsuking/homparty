@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const createFallAnimation = (swayAmount: number) => keyframes`
@@ -39,11 +39,11 @@ const Snowflake = styled.div<{
   animation: ${({ swayAmount }) => createFallAnimation(swayAmount)} ${({ duration }) => duration}s linear infinite;
   animation-delay: ${({ delay }) => delay}s;
   pointer-events: none;
-  box-shadow: 0 0 ${({ size }) => size * 2}px rgba(255, 255, 255, 0.8),
-              0 0 ${({ size }) => size * 3}px rgba(255, 255, 255, 0.5),
-              0 0 ${({ size }) => size * 4}px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 ${({ size }) => size * 1.5}px rgba(255, 255, 255, 0.7),
+              0 0 ${({ size }) => size * 2}px rgba(255, 255, 255, 0.4);
   z-index: 1;
-  filter: blur(${({ size }) => size < 4 ? 0.5 : 0}px);
+  will-change: transform;
+  transform: translateZ(0); /* GPU 가속 */
 `;
 
 const SnowflakesContainer = styled.div`
@@ -58,25 +58,40 @@ const SnowflakesContainer = styled.div`
 `;
 
 const Snowflakes: React.FC = () => {
-  // 눈보라 효과를 위해 눈송이를 훨씬 많이 생성 (300개)
-  const snowflakes = Array.from({ length: 300 }, (_, i) => {
-    const size = 2 + Math.random() * 8; // 2-10px
+  const [snowflakeCount, setSnowflakeCount] = useState(100);
+  
+  useEffect(() => {
+    // 모바일 성능을 위해 눈송이 개수 조절 (데스크톱: 100개, 모바일: 50개)
+    const checkMobile = () => {
+      const isMobile = window.innerWidth <= 768;
+      setSnowflakeCount(isMobile ? 50 : 100);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // 부드럽게 사르륵 떨어지도록 속도 조절
+  const snowflakes = Array.from({ length: snowflakeCount }, (_, i) => {
+    const size = 2 + Math.random() * 6; // 2-8px (조금 작게)
     const speed = Math.random();
-    let duration = 1.5 + Math.random() * 2; // 1.5-3.5초 (빠르게)
-    let swayAmount = 30 + Math.random() * 50; // 30-80px 흔들림
+    // 느리게 사르륵 떨어지도록 duration 증가 (4-10초)
+    let duration = 4 + Math.random() * 6; // 4-10초
+    let swayAmount = 20 + Math.random() * 40; // 20-60px 흔들림 (조금 줄임)
     
     if (speed > 0.7) {
-      duration = 1 + Math.random() * 1.5; // 1-2.5초 (매우 빠름)
-      swayAmount = 50 + Math.random() * 80; // 50-130px (더 많이 흔들림)
+      duration = 3.5 + Math.random() * 4; // 3.5-7.5초
+      swayAmount = 30 + Math.random() * 50; // 30-80px
     } else if (speed < 0.3) {
-      duration = 2.5 + Math.random() * 2; // 2.5-4.5초
-      swayAmount = 20 + Math.random() * 30; // 20-50px (적게 흔들림)
+      duration = 6 + Math.random() * 4; // 6-10초 (더 느리게)
+      swayAmount = 15 + Math.random() * 25; // 15-40px (적게 흔들림)
     }
     
     return {
       id: i,
       left: Math.random() * 100,
-      delay: Math.random() * 3,
+      delay: Math.random() * 5, // 지연 시간도 늘려서 자연스럽게
       duration,
       size,
       swayAmount: swayAmount * (Math.random() > 0.5 ? 1 : -1), // 좌우 랜덤

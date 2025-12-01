@@ -110,7 +110,6 @@ const Location = () => {
   const kakaoMapUrl = `https://map.kakao.com/link/to/강변아파트 309동,${latitude},${longitude}`;
   
   // 카카오맵 공유 링크를 사용한 미리보기
-  // 카카오맵은 공유 기능을 통해 iframe 임베드를 지원합니다
   const mapEmbedUrl = `https://map.kakao.com/link/map/강변아파트,${latitude},${longitude}`;
 
   return (
