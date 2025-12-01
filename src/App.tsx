@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyles, theme } from './styles/GlobalStyles';
+import Header from './components/Header';
+import Gallery from './components/Gallery';
+import Location from './components/Location';
+import Contact from './components/Contact';
+
+const AppContainer = styled.div`
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const Divider = styled.div`
+  height: 1px;
+  background-color: #eee;
+  margin: 60px 0;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <AppContainer>
+        <Header />
+        <Divider />
+        <Gallery />
+        <Divider />
+        <Location />
+        <Divider />
+        <Contact />
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 
