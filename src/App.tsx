@@ -4,6 +4,7 @@ import { GlobalStyles, theme, fadeIn } from './styles/GlobalStyles';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
 import Location from './components/Location';
+import BackgroundEffect from './components/BackgroundEffect';
 
 const AppContainer = styled.div`
   max-width: 768px;
@@ -23,6 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <BackgroundEffect />
       <AppContainer>
         <Header />
         <Divider />
