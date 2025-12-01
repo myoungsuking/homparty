@@ -4,7 +4,6 @@ import { GlobalStyles, theme } from './styles/GlobalStyles';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
 import Location from './components/Location';
-import Contact from './components/Contact';
 
 const AppContainer = styled.div`
   max-width: 768px;
@@ -28,8 +27,6 @@ function App() {
         <Gallery />
         <Divider />
         <Location />
-        <Divider />
-        <Contact />
       </AppContainer>
     </ThemeProvider>
   );

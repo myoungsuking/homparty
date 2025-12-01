@@ -63,9 +63,9 @@ const Button = styled.a`
 
 
 const Location = () => {
-  const address = "서울시 OO구 OO로 123, OOO아파트 101동 1001호";
-  // Replace with your actual Kakao Maps URL
-  const kakaoMapUrl = "https://map.kakao.com/link/to/YOUR_LOCATION_NAME,37.509990,127.035521";
+  const address = "서울특별시 강서구 허준로 139, 강변아파트 309동 1302호";
+  // 강변아파트 309동
+  const kakaoMapUrl = "https://map.kakao.com/link/to/강변아파트 309동,37.564555,126.855101";
 
   return (
     <Section>
@@ -79,8 +79,7 @@ const Location = () => {
       </Button>
       <TransportInfo>
         <h3>대중교통 안내</h3>
-        <p><strong>지하철:</strong> O호선 OO역 O번 출구, 도보 5분</p>
-        <p><strong>버스:</strong> OO번, OO번 버스, OOO 정류장 하차</p>
+        <p><strong>지하철:</strong> 9호선 가양역 3번 출구, 도보 5분</p>
       </TransportInfo>
     </Section>
   );

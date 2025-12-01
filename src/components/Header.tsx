@@ -21,7 +21,7 @@ const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.lightText};
 `;
 
-const GroomBride = styled.p`
+const HostName = styled.p`
   font-size: 1.3rem;
   margin-top: 20px;
   font-weight: bold;
@@ -31,10 +31,10 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Subtitle>Save the Date</Subtitle>
-      <Title>우리, 집들이 합니다</Title>
-      <GroomBride>OOO & OOO</GroomBride>
+      <Title>집들이 합니다</Title>
+      <HostName>김명수</HostName>
       <hr style={{width: "50px", margin: "30px auto", border: "1px solid #ddd"}}/>
-      <p>2025년 12월 25일 목요일</p>
+      <p>2025년 12월 20일 토요일</p>
       <p>오후 6시</p>
     </HeaderContainer>
   );
