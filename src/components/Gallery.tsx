@@ -6,36 +6,59 @@ const Section = styled.section`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8D7B68 0%, #A4907C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 20px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 `;
 
 const PhotoContainer = styled.div`
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const Photo = styled.img`
   width: 100%;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px;
-  background-color: #eee;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
 
-  &:hover {
-    transform: scale(1.05);
+  ${PhotoContainer}:hover & {
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    height: 300px;
   }
 `;
 

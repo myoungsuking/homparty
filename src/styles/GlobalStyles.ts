@@ -29,8 +29,13 @@ export const fadeIn = keyframes`
 export const GlobalStyles = createGlobalStyle`
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-    background: ${({ theme }) => theme.colors.background};
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.fonts.main};
     -webkit-font-smoothing: antialiased;
@@ -38,6 +43,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     word-break: keep-all;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
