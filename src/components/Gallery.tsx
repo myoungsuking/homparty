@@ -63,11 +63,8 @@ const Photo = styled.img`
 `;
 
 const Gallery = () => {
-  // 두 번째 이미지 URL을 원하시는 것으로 교체하세요.
-  const images = [
-    'https://i3.ruliweb.com/img/22/02/26/17f34c7e588524cc2.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxd9qR1uXz_RyBEmbpKPFYJYlpzwfzI6nbaA&s',
-  ];
+  // public 폴더 기준 경로
+  const images = ['/1.JPG', '/2.JPG'];
 
   return (
     <Section>
