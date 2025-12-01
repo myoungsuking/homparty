@@ -10,7 +10,7 @@ const SectionTitle = styled.h2`
   font-size: 2.2rem;
   margin-bottom: 40px;
   font-weight: 700;
-  background: linear-gradient(135deg, #8D7B68 0%, #A4907C 100%);
+  background: linear-gradient(135deg, #E8D5C4 0%, #F5E6D3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -26,9 +26,9 @@ const MapContainer = styled.div`
   border-radius: 20px;
   margin-bottom: 30px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(30, 30, 30, 0.6);
   backdrop-filter: blur(10px);
   
   iframe {
@@ -45,21 +45,21 @@ const Address = styled.p`
   color: ${({ theme }) => theme.colors.text};
   font-weight: 500;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const TransportInfo = styled.div`
   text-align: left;
   margin-top: 30px;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   
   h3 {
     font-size: 1.3rem;

@@ -2,11 +2,11 @@ import { createGlobalStyle, keyframes } from 'styled-components';
 
 export const theme = {
   colors: {
-    primary: '#8D7B68',
-    secondary: '#F7F5F2',
-    text: '#3C3633',
-    lightText: '#A4907C',
-    background: '#FFFEFD',
+    primary: '#E8D5C4',
+    secondary: '#2A2A2A',
+    text: '#F5F5F5',
+    lightText: '#B8B8B8',
+    background: '#1A1A1A',
     accent: '#C8B6A6',
   },
   fonts: {
@@ -34,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.fonts.main};

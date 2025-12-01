@@ -13,19 +13,19 @@ const float = keyframes`
 const HeaderContainer = styled.header`
   padding: 80px 30px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   margin-bottom: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const Title = styled.h1`
   font-size: 3.2rem;
   margin: 0 0 15px;
   font-weight: 800;
-  background: linear-gradient(135deg, #8D7B68 0%, #A4907C 100%);
+  background: linear-gradient(135deg, #E8D5C4 0%, #F5E6D3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

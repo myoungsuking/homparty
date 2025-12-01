@@ -10,7 +10,7 @@ const SectionTitle = styled.h2`
   text-align: center;
   margin-bottom: 40px;
   font-weight: 700;
-  background: linear-gradient(135deg, #8D7B68 0%, #A4907C 100%);
+  background: linear-gradient(135deg, #E8D5C4 0%, #F5E6D3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -34,15 +34,15 @@ const PhotoGrid = styled.div`
 const PhotoContainer = styled.div`
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(30, 30, 30, 0.6);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
   }
 `;
 
