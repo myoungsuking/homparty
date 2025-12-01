@@ -1,21 +1,33 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
 
 export const theme = {
   colors: {
-    primary: '#5a483a',
-    secondary: '#f7f2e9',
-    text: '#333333',
-    lightText: '#777777',
-    background: '#ffffff',
+    primary: '#8D7B68',
+    secondary: '#F7F5F2',
+    text: '#3C3633',
+    lightText: '#A4907C',
+    background: '#FFFEFD',
+    accent: '#C8B6A6',
   },
   fonts: {
-    main: "'Gowun Dodum', sans-serif",
-    heading: "'Gowun Batang', serif",
+    main: "'Pretendard', sans-serif",
+    heading: "'Pretendard', sans-serif",
   },
 };
 
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&display=swap');
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
   body {
     background: ${({ theme }) => theme.colors.background};
@@ -25,16 +37,17 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
+    word-break: keep-all;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: ${({ theme }) => theme.fonts.heading};
     color: ${({ theme }) => theme.colors.primary};
-    font-weight: bold;
+    font-weight: 600;
   }
 
   p {
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   a {

@@ -14,50 +14,58 @@ const SectionTitle = styled.h2`
 const MapContainer = styled.div`
   width: 100%;
   height: 250px;
-  background-color: #eee;
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: #888;
+  color: ${({ theme }) => theme.colors.lightText};
+  border: 1px solid ${({ theme }) => theme.colors.accent}33;
 `;
 
 const Address = styled.p`
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  line-height: 1.7;
 `;
 
 const TransportInfo = styled.div`
   text-align: left;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
+  margin-top: 30px;
+  padding: 25px;
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 8px;
   
   h3 {
     font-size: 1.2rem;
     margin-top: 0;
+    margin-bottom: 15px;
+    color: ${({ theme }) => theme.colors.primary};
   }
   
   p {
     margin: 5px 0;
+    font-size: 1rem;
   }
 `;
 
 const Button = styled.a`
   display: inline-block;
-  padding: 12px 24px;
+  padding: 14px 28px;
   background-color: #FFEB00; /* Kakao yellow */
   color: #3C1E1E;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
   font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
   
   &:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   }
 `;
 

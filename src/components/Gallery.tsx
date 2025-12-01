@@ -13,35 +13,47 @@ const SectionTitle = styled.h2`
 
 const PhotoGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const PhotoContainer = styled.div`
+  overflow: hidden;
+  border-radius: 8px;
 `;
 
 const Photo = styled.img`
   width: 100%;
-  height: 250px;
+  height: 400px;
   object-fit: cover;
   border-radius: 8px;
   background-color: #eee;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const Gallery = () => {
-  // Replace with your actual image URLs
+  // 두 번째 이미지 URL을 원하시는 것으로 교체하세요.
   const images = [
-    'https://picsum.photos/id/1015/600/600',
-    'https://picsum.photos/id/1018/600/600',
-    'https://picsum.photos/id/1025/600/600',
-    'https://picsum.photos/id/10/600/600',
-    'https://picsum.photos/id/20/600/600',
-    'https://picsum.photos/id/30/600/600',
+    'https://i3.ruliweb.com/img/22/02/26/17f34c7e588524cc2.jpg',
+    'https://picsum.photos/id/1018/600/800',
   ];
 
   return (
     <Section>
-      <SectionTitle>우리의 공간</SectionTitle>
+      <SectionTitle>My Sweet Home</SectionTitle>
       <PhotoGrid>
         {images.map((src, index) => (
-          <Photo key={index} src={src} alt={`House photo ${index + 1}`} />
+          <PhotoContainer key={index}>
+            <Photo src={src} alt={`House photo ${index + 1}`} />
+          </PhotoContainer>
         ))}
       </PhotoGrid>
     </Section>
