@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const fall = keyframes`
   0% {
@@ -32,9 +32,8 @@ const SnowContainer = styled.div`
   z-index: -1;
 `;
 
-const Snowflake = styled.div.attrs<{ speed: number; delay: number; size: number; animation: any }>(props => ({
+const Snowflake = styled.div.attrs<{ speed: number; delay: number; size: number }>(props => ({
   style: {
-    animation: `${props.animation} ${props.speed}s linear infinite`,
     animationDelay: `${props.delay}s`,
     width: `${props.size}px`,
     height: `${props.size}px`,
@@ -46,6 +45,7 @@ const Snowflake = styled.div.attrs<{ speed: number; delay: number; size: number;
   background: white;
   border-radius: 50%;
   opacity: 0;
+  animation: ${({ animation, speed }) => css`${animation} ${speed}s linear infinite`};
 `;
 
 const BackgroundEffect = () => {
