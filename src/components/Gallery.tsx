@@ -43,7 +43,7 @@ const Gallery = () => {
   // 두 번째 이미지 URL을 원하시는 것으로 교체하세요.
   const images = [
     'https://i3.ruliweb.com/img/22/02/26/17f34c7e588524cc2.jpg',
-    'https://picsum.photos/id/1018/600/800',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxd9qR1uXz_RyBEmbpKPFYJYlpzwfzI6nbaA&s',
   ];
 
   return (
